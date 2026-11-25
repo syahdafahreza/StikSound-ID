@@ -4,336 +4,336 @@
 
 # StikSound
 
-**Crea stickers con sonido de hasta 5 o 10 segundos (con switch en pantalla) a partir de un PNG, JPG, WebP o GIF animado: pega tu sticker, elige un audio local o un enlace de MyInstants, recorta el fragmento exacto y exporta todo localmente.**
+**Buat stiker bersuara hingga 5 atau 10 detik (dengan sakelar di layar) dari PNG, JPG, WebP, atau GIF animasi: tempel stiker Anda, pilih audio lokal atau tautan MyInstants, potong bagian yang diinginkan, dan ekspor semuanya secara lokal.**
 
-[![Usar en la Web](https://img.shields.io/badge/Usar%20en%20la%20Web-GitHub%20Pages-0ea5e9?style=for-the-badge&logo=githubpages&logoColor=white)](https://silverfeit.github.io/StikSound/)
-[![Descargar](https://img.shields.io/github/v/release/SilverFeit/StikSound?style=for-the-badge&label=Descargar&color=25D366)](https://github.com/SilverFeit/StikSound/releases/latest)
+[![Gunakan di Web](https://img.shields.io/badge/Gunakan%20di%20Web-GitHub%20Pages-0ea5e9?style=for-the-badge&logo=githubpages&logoColor=white)](https://silverfeit.github.io/StikSound/)
+[![Unduh](https://img.shields.io/github/v/release/SilverFeit/StikSound?style=for-the-badge&label=Unduh&color=25D366)](https://github.com/SilverFeit/StikSound/releases/latest)
 
-[![Platforms](https://img.shields.io/badge/Platforms-Web%20%7C%20Windows%20%7C%20macOS%20%7C%20Chrome-25D366?style=flat-square)](#usar-en-la-web-vs-instalar)
-[![Local Processing](https://img.shields.io/badge/Procesamiento-100%25%20local-10b981?style=flat-square)](#privacidad-y-seguridad)
+[![Platforms](https://img.shields.io/badge/Platforms-Web%20%7C%20Windows%20%7C%20macOS%20%7C%20Chrome-25D366?style=flat-square)](#gunakan-di-web-vs-instal)
+[![Local Processing](https://img.shields.io/badge/Pemrosesan-100%25%20lokal-10b981?style=flat-square)](#privasi-dan-keamanan)
 [![License](https://img.shields.io/badge/License-MIT%20OR%20Apache--2.0-6366f1?style=flat-square)](LICENSE-MIT)
 
-[**Usar en la Web**](https://silverfeit.github.io/StikSound/) · [**Descargar**](https://github.com/SilverFeit/StikSound/releases/latest) · [**Guía de uso**](#guía-de-uso-paso-a-paso) · [**Cómo funciona internamente**](#cómo-funciona-internamente) · [**Desarrollo**](#desarrollo)
+[**Gunakan di Web**](https://silverfeit.github.io/StikSound/) · [**Unduh**](https://github.com/SilverFeit/StikSound/releases/latest) · [**Panduan penggunaan**](#panduan-penggunaan-langkah-demi-langkah) · [**Cara kerja internal**](#cara-kerja-internal) · [**Pengembangan**](#pengembangan)
 
 </div>
 
 ---
 
-## 🌐 Usar en la Web vs. Instalar
+## 🌐 Gunakan di Web vs. Instal
 
-Puedes usar **StikSound directamente desde el navegador** sin instalar nada (funciona en PC, Android y iPhone como PWA), pero ten en cuenta la diferencia con **MyInstants**:
+Anda dapat menggunakan **StikSound langsung dari browser** tanpa menginstal apa pun (berjalan di PC, Android, dan iPhone sebagai PWA), namun perhatikan perbedaan terkait **MyInstants**:
 
 > [!IMPORTANT]
-> **Versión Web ([silverfeit.github.io/StikSound](https://silverfeit.github.io/StikSound/)):** funciona **solo con audios ya descargados** en tu dispositivo (`MP3`, `WAV`, `M4A`, `OGG`, `AAC`) o el sonido de un video corto.
+> **Versi Web ([silverfeit.github.io/StikSound](https://silverfeit.github.io/StikSound/)):** hanya berfungsi **dengan audio yang sudah diunduh** di perangkat Anda (`MP3`, `WAV`, `M4A`, `OGG`, `AAC`) atau suara dari video pendek.
 >
-> **¿Quieres pegar enlaces directos de MyInstants?** Por seguridad de los navegadores (CORS), MyInstants bloquea la descarga directa desde páginas web. Para usar enlaces de MyInstants **toca instalar** la [app de escritorio (Windows/macOS) o la extensión de Chrome](https://github.com/SilverFeit/StikSound/releases/latest) — o bien descargar primero el MP3 desde MyInstants y elegirlo manualmente en la web.
+> **Ingin menempelkan tautan langsung dari MyInstants?** Demi keamanan browser (CORS), MyInstants memblokir pengunduhan langsung dari halaman web. Untuk menggunakan tautan MyInstants **Anda perlu menginstal** [aplikasi desktop (Windows/macOS) atau ekstensi Chrome](https://github.com/SilverFeit/StikSound/releases/latest) — atau unduh MP3-nya terlebih dahulu dari MyInstants lalu pilih secara manual di web.
 
-| Característica | 🌐 Versión Web (GitHub Pages) | 💻 App Escritorio / 🧩 Extensión Chrome |
+| Fitur | 🌐 Versi Web (GitHub Pages) | 💻 Aplikasi Desktop / 🧩 Ekstensi Chrome |
 | --- | :---: | :---: |
-| **Instalación requerida** | ❌ Ninguna ([abrir ahora](https://silverfeit.github.io/StikSound/)) | ✅ [Descargar release](https://github.com/SilverFeit/StikSound/releases/latest) |
-| **Procesamiento 100% local** | ✅ | ✅ |
-| **Stickers PNG / JPG / WebP / GIF** | ✅ | ✅ |
-| **Videos cortos (`MP4`, `MOV`, `WebM`) como sticker** | ✅ | — |
-| **Switch de duración `5s \| 10s`** | ✅ | ✅ |
-| **Audios locales descargados** | ✅ | ✅ |
-| **Pegar enlaces directos de MyInstants** | ❌ *(descarga el MP3 primero)* | ✅ |
-| **WebM con transparencia** | ❌ *(solo MP4 en móvil/web)* | ✅ |
+| **Instalasi diperlukan** | ❌ Tidak ada ([buka sekarang](https://silverfeit.github.io/StikSound/)) | ✅ [Unduh rilis](https://github.com/SilverFeit/StikSound/releases/latest) |
+| **Pemrosesan 100% lokal** | ✅ | ✅ |
+| **Stiker PNG / JPG / WebP / GIF** | ✅ | ✅ |
+| **Video pendek (`MP4`, `MOV`, `WebM`) sebagai stiker** | ✅ | — |
+| **Sakelar durasi `5s \| 10s`** | ✅ | ✅ |
+| **Audio lokal yang diunduh** | ✅ | ✅ |
+| **Tempel tautan langsung MyInstants** | ❌ *(unduh MP3 terlebih dahulu)* | ✅ |
+| **WebM dengan transparansi** | ❌ *(hanya MP4 di ponsel/web)* | ✅ |
 
 ---
 
-## Qué hace StikSound
+## Apa yang dilakukan StikSound
 
-StikSound combina **una imagen cuadrada** y **un fragmento de audio** en un archivo descargable o copiable. El máximo de ese fragmento se elige con el botón `5s | 10s` (por defecto, 10 segundos). Está pensado para preparar stickers con sonido para WhatsApp sin usar editores de video complejos y sin subir tus archivos a un servicio externo.
+StikSound menggabungkan **gambar persegi** dan **potongan audio** menjadi file yang dapat diunduh atau disalin. Durasi maksimal potongan tersebut dipilih dengan tombol `5s | 10s` (default 10 detik). Aplikasi ini dirancang untuk menyiapkan stiker bersuara untuk WhatsApp tanpa menggunakan editor video yang rumit dan tanpa mengunggah file Anda ke layanan eksternal.
 
-Concretamente permite:
+Secara khusus, aplikasi ini memungkinkan Anda:
 
-- Usar stickers o memes en **PNG, JPG/JPEG, WebP o GIF**.
-- Trabajar con **GIF animados**, reproduciéndolos en bucle durante el fragmento exportado.
-- Agregar audio desde un archivo local **MP3, WAV, OGG, M4A o AAC**.
-- Pegar un enlace de **MyInstants** y descargar ese sonido de forma validada.
-- Seleccionar un fragmento de audio de **0,1 a 5 o 10 segundos** usando el selector integrado `5s | 10s`.
-- Exportar un **MP4 compatible**, un **WebM con transparencia**, un **paquete ZIP** o un **WebP estático**.
-- Guardar y reabrir proyectos `.stiksound.zip` con la imagen, el audio y la configuración del recorte.
+- Menggunakan stiker atau meme dalam format **PNG, JPG/JPEG, WebP, atau GIF**.
+- Bekerja dengan **GIF animasi**, memutarnya secara berulang (loop) selama durasi potongan yang diekspor.
+- Menambahkan audio dari file lokal **MP3, WAV, OGG, M4A, atau AAC**.
+- Menempelkan tautan **MyInstants** dan mengunduh suara tersebut secara tervalidasi.
+- Memilih potongan audio dari **0,1 hingga 5 atau 10 detik** menggunakan pemilih terintegrasi `5s | 10s`.
+- Mengekspor **MP4 yang kompatibel**, **WebM dengan transparansi**, **paket ZIP**, atau **WebP statis**.
+- Menyimpan dan membuka kembali proyek `.stiksound.zip` berisi gambar, audio, dan pengaturan pemotongan.
 
-> **Nota importante sobre WhatsApp:** El MP4 exportado es un video, no un sticker. Pegarlo en el chat lo envía como video y no lo agrega a los stickers. En algunas cuentas de la beta de Android se puede probar Crear sticker eligiendo ese video en la galería; la duración y el audio los decide WhatsApp, y esa beta no está documentada de forma oficial. El perfil `native-sound-sticker` sigue deshabilitado.
+> **Catatan penting tentang WhatsApp:** MP4 yang diekspor adalah video, bukan stiker. Menempelkannya di obrolan akan mengirimkannya sebagai video dan tidak menambahkannya ke daftar stiker. Pada beberapa akun beta Android Anda dapat mencoba Buat stiker dengan memilih video tersebut dari galeri; durasi dan audionya ditentukan oleh WhatsApp, dan fitur beta tersebut tidak didokumentasikan secara resmi. Profil `native-sound-sticker` masih dinonaktifkan.
 
 ---
 
-## Guía de uso paso a paso
+## Panduan penggunaan langkah demi langkah
 
-### 1. Carga el sticker
+### 1. Muat stiker
 
-Tienes tres formas de cargar la imagen:
+Ada tiga cara untuk memuat gambar:
 
-- Pegarla directamente con `Ctrl + V` o `Cmd + V`.
-- Arrastrarla sobre la zona central.
-- Hacer clic en la zona central y elegir el archivo.
+- Menempelkannya langsung dengan `Ctrl + V` atau `Cmd + V`.
+- Menyeretnya ke area tengah.
+- Mengklik area tengah dan memilih file.
 
-StikSound analiza los bytes reales del archivo, no solamente su extensión. Así comprueba el formato, las dimensiones, si tiene transparencia y si es un GIF animado.
+StikSound menganalisis byte asli file, bukan hanya ekstensinya. Dengan begitu, aplikasi memeriksa format, dimensi, apakah memiliki transparansi, dan apakah itu GIF animasi.
 
-### 2. Encuadra la imagen en formato 1:1
+### 2. Bingkai gambar dalam format 1:1
 
-Los stickers usan formato cuadrado. Si la imagen original no es cuadrada:
+Stiker menggunakan format persegi. Jika gambar asli tidak persegi:
 
-- StikSound calcula automáticamente un recorte `1:1` centrado.
-- Puedes mover el mouse sobre la imagen, **sin hacer clic**, para desplazar el encuadre horizontal o verticalmente.
-- La salida nunca se escala hacia arriba artificialmente: usa el lado menor de la imagen, con un máximo de `512 × 512 px`.
-- Las dimensiones se redondean a números pares para evitar incompatibilidades con codificadores de video.
+- StikSound secara otomatis menghitung pemotongan `1:1` yang terpusat.
+- Anda dapat menggerakkan mouse di atas gambar, **tanpa mengklik**, untuk menggeser bingkai secara horizontal atau vertikal.
+- Hasilnya tidak pernah diperbesar secara paksa: menggunakan sisi terkecil gambar, dengan ukuran maksimal `512 × 512 px`.
+- Dimensi dibulatkan ke angka genap untuk menghindari ketidakcocokan dengan enkoder video.
 
-### 3. Agrega el audio
+### 3. Tambahkan audio
 
-También tienes tres opciones:
+Anda juga memiliki tiga opsi:
 
-- Arrastrar un archivo de audio sobre la barra inferior.
-- Pulsar el botón **Audio** y elegir un archivo.
-- Pegar un enlace válido de MyInstants.
+- Menyeret file audio ke bilah bawah.
+- Menekan tombol **Audio** dan memilih file.
+- Menempelkan tautan MyInstants yang valid.
 
-Límites del archivo de origen:
+Batas file sumber:
 
-| Regla | Límite |
+| Aturan | Batas |
 | --- | ---: |
-| Tamaño máximo del audio | 25 MB |
-| Duración máxima del audio importado | 3 minutos |
-| Duración mínima del fragmento seleccionado | 0,1 segundos |
-| Duración máxima del fragmento exportado | 5 o 10 segundos (botón; por defecto 10) |
+| Ukuran maksimal audio | 25 MB |
+| Durasi maksimal audio yang diimpor | 3 menit |
+| Durasi minimal potongan yang dipilih | 0,1 detik |
+| Durasi maksimal potongan yang diekspor | 5 atau 10 detik (tombol; default 10) |
 
-Si el audio dura lo mismo o menos que el máximo elegido, StikSound selecciona el audio completo automáticamente. Si dura más, selecciona los primeros 5 o 10 segundos (según el botón; 10 por defecto) y te permite mover esa ventana.
+Jika durasi audio sama atau kurang dari batas maksimal yang dipilih, StikSound memilih seluruh audio secara otomatis. Jika lebih panjang, aplikasi memilih 5 atau 10 detik pertama (tergantung tombol; default 10) dan memungkinkan Anda menggeser jendela tersebut.
 
-### 4. Ajusta el fragmento de sonido
+### 4. Sesuaikan potongan suara
 
-La barra inferior muestra una forma de onda calculada a partir del audio real:
+Bilah bawah menampilkan bentuk gelombang (waveform) yang dihitung dari audio asli:
 
-- Las barras representan picos mínimos y máximos en 1024 divisiones del audio.
-- Al hacer clic sobre la onda, la ventana de recorte se centra cerca de ese punto.
-- Si el audio supera el máximo elegido (`5s` o `10s`), aparece un deslizador para mover la ventana a lo largo del archivo.
-- El indicador de la derecha muestra `seleccionado / máximo`, por ejemplo `10.0s / 10.0s`.
-- El botón de reproducción escucha exactamente el tramo seleccionado.
+- Batang-batang mewakili puncak minimum dan maksimum dalam 1024 pembagian audio.
+- Saat mengklik gelombang, jendela pemotongan akan terpusat di dekat titik tersebut.
+- Jika audio melebihi batas maksimal yang dipilih (`5s` atau `10s`), penggeser akan muncul untuk memindahkan jendela di sepanjang file.
+- Indikator di sebelah kanan menampilkan `dipilih / maksimal`, misalnya `10.0s / 10.0s`.
+- Tombol putar memutar tepat bagian yang dipilih.
 
-### 5. Elige el fondo
+### 5. Pilih latar belakang
 
-Si el sticker tiene transparencia aparecen estas opciones:
+Jika stiker memiliki transparansi, opsi berikut akan muncul:
 
-- **Transparente:** exporta WebM con canal alfa cuando el navegador o WebView lo admite.
-- **Blanco / Negro / Color:** compone la imagen sobre un fondo sólido para MP4.
+- **Transparan:** mengekspor WebM dengan saluran alfa jika browser atau WebView mendukungnya.
+- **Putih / Hitam / Warna:** menggabungkan gambar di atas latar belakang solid untuk MP4.
 
-MP4 no conserva transparencia real; por eso la transparencia se rellena con el color elegido. WebM sí puede conservar canal alfa mediante VP9 cuando WebCodecs está disponible.
+MP4 tidak mempertahankan transparansi asli; oleh karena itu transparansi diisi dengan warna yang dipilih. WebM dapat mempertahankan saluran alfa melalui VP9 saat WebCodecs tersedia.
 
-### 6. Previsualiza, copia o descarga
+### 6. Pratinjau, salin, atau unduh
 
-Botones principales:
+Tombol utama:
 
-| Botón | Acción |
+| Tombol | Aksi |
 | --- | --- |
-| `✕` | Borra sticker, audio, recorte y vista previa para empezar de cero. |
-| `➔` | Genera la vista previa compatible e intenta copiar el resultado al portapapeles. |
-| `⬇` | Abre el selector de formato y descarga el archivo elegido. |
-| `⋯` | Abre opciones de proyecto, idioma y licencias. |
+| `✕` | Menghapus stiker, audio, potongan, dan pratinjau untuk memulai dari awal. |
+| `➔` | Membuat pratinjau yang kompatibel dan mencoba menyalin hasilnya ke papan klip. |
+| `⬇` | Membuka pemilih format dan mengunduh file yang dipilih. |
+| `⋯` | Membuka opsi proyek, bahasa, dan lisensi. |
 
-Si el sistema operativo o el navegador no permite copiar videos al portapapeles, usa `⬇` y comparte el archivo descargado manualmente.
+Jika sistem operasi atau browser tidak mengizinkan menyalin video ke papan klip, gunakan `⬇` dan bagikan file yang diunduh secara manual.
 
 ---
 
-## Formatos de entrada y salida
+## Format input dan output
 
-### Entrada de imagen
+### Input gambar
 
-| Formato | Compatibilidad |
+| Format | Dukungan |
 | --- | --- |
-| PNG | Compatible, incluida transparencia. |
-| JPG/JPEG | Compatible, sin transparencia. |
-| WebP | Compatible como imagen de entrada; la animación WebP no es el flujo principal de v1. |
-| GIF | Compatible; los GIF animados se decodifican por cuadros y se repiten en bucle. |
-| MP4, MOV, WebM | Solo en la versión web, como clip de entrada de hasta 60 segundos. La exportación sigue el máximo de 5 o 10 segundos. |
+| PNG | Didukung, termasuk transparansi. |
+| JPG/JPEG | Didukung, tanpa transparansi. |
+| WebP | Didukung sebagai gambar input; animasi WebP bukan alur utama v1. |
+| GIF | Didukung; GIF animasi didekode per bingkai dan diputar berulang. |
+| MP4, MOV, WebM | Hanya di versi web, sebagai klip input hingga 60 detik. Ekspor tetap mengikuti batas 5 atau 10 detik. |
 
-Límites de seguridad para imágenes:
+Batas keamanan untuk gambar:
 
-- 20 MB por archivo.
-- Máximo 8000 px de ancho o alto.
-- Máximo 40 megapíxeles decodificados.
+- 20 MB per file.
+- Maksimal lebar atau tinggi 8000 px.
+- Maksimal 40 megapiksel yang didekode.
 
-### Entrada de audio
+### Input audio
 
-| Formato | Compatibilidad |
+| Format | Dukungan |
 | --- | --- |
-| MP3 | Compatible a través del decodificador del navegador/WebView o Rust. |
-| WAV | Compatible; además existe un decodificador PCM de respaldo. |
-| OGG | Compatible cuando el decodificador de la plataforma lo admite. |
-| M4A/AAC | Compatible cuando el decodificador de la plataforma lo admite. |
+| MP3 | Didukung melalui dekoder browser/WebView atau Rust. |
+| WAV | Didukung; juga tersedia dekoder PCM cadangan. |
+| OGG | Didukung jika dekoder platform mendukungnya. |
+| M4A/AAC | Didukung jika dekoder platform mendukungnya. |
 
-### Salida
+### Output
 
-| Formato | Uso recomendado | Qué contiene |
+| Format | Penggunaan yang disarankan | Isi |
 | --- | --- | --- |
-| MP4 | Máxima compatibilidad | Video cuadrado con fondo sólido y audio AAC cuando WebCodecs está disponible. |
-| WebM | Alta calidad/transparencia | Video VP9 con alfa y audio Opus cuando WebCodecs está disponible. |
-| ZIP `.stiksound.zip` | Paquete portable/proyecto | Imagen, audio y metadatos del proyecto o paquete. |
-| WebP | Sticker estático | Una imagen `1:1` sin audio, optimizada para entrar en el límite de 100 KB. |
+| MP4 | Kompatibilitas maksimal | Video persegi dengan latar belakang solid dan audio AAC saat WebCodecs tersedia. |
+| WebM | Kualitas tinggi/transparansi | Video VP9 dengan alfa dan audio Opus saat WebCodecs tersedia. |
+| ZIP `.stiksound.zip` | Paket portabel/proyek | Gambar, audio, dan metadata proyek atau paket. |
+| WebP | Stiker statis | Gambar `1:1` tanpa audio, dioptimalkan agar masuk dalam batas 100 KB. |
 
-La duración del video exportado sigue al fragmento de audio seleccionado, con una tolerancia de validación de ±50 ms.
+Durasi video yang diekspor mengikuti potongan audio yang dipilih, dengan toleransi validasi ±50 ms.
 
 ---
 
-## Cómo funciona internamente
+## Cara kerja internal
 
-### Flujo general
+### Alur umum
 
 ```text
-Sticker/Imagen + Audio
+Stiker/Gambar + Audio
         │
         ▼
-Validación y lectura de formatos
+Validasi dan pembacaan format
         │
-        ├─ Imagen: dimensiones, alpha, animación y recorte 1:1
+        ├─ Gambar: dimensi, alfa, animasi, dan pemotongan 1:1
         │
-        └─ Audio: duración, canales, sample rate, mezcla mono y forma de onda
+        └─ Audio: durasi, saluran, sample rate, campuran mono, dan waveform
         │
         ▼
-Proyecto en memoria
+Proyek di memori
         │
-        ├─ sticker
+        ├─ stiker
         ├─ audio
-        ├─ start_ms / end_ms del fragmento
-        └─ formato de exportación elegido
+        ├─ start_ms / end_ms potongan
+        └─ format ekspor yang dipilih
         │
         ▼
-Validación antes de exportar
+Validasi sebelum ekspor
         │
         ▼
-Renderizado local
+Rendering lokal
         │
         ├─ video MP4/WebM
-        ├─ paquete ZIP
-        └─ WebP estático
+        ├─ paket ZIP
+        └─ WebP statis
         │
         ▼
-Vista previa, copia o descarga
+Pratinjau, salin, atau unduh
 ```
 
-### Pipeline de imagen
+### Pipeline gambar
 
-1. Se leen los bytes del archivo y se identifica el formato por cabecera.
-2. Se rechazan imágenes demasiado grandes o potencialmente peligrosas por dimensiones.
-3. Se calcula el recorte cuadrado desde `crop_x` y `crop_y` normalizados.
-4. En imágenes estáticas se dibuja un único cuadro.
-5. En GIF animados se decodifican los cuadros y sus tiempos; luego se programa una secuencia en bucle que cubre exactamente la duración seleccionada.
-6. Para MP4 se compone sobre el color de fondo elegido; para WebM se conserva el canal alfa cuando el codificador lo permite.
+1. Byte file dibaca dan format diidentifikasi berdasarkan header.
+2. Gambar yang terlalu besar atau berpotensi berbahaya berdasarkan dimensi ditolak.
+3. Pemotongan persegi dihitung dari `crop_x` dan `crop_y` yang dinormalisasi.
+4. Untuk gambar statis, satu bingkai digambar.
+5. Untuk GIF animasi, bingkai dan waktunya didekode; lalu urutan berulang dijadwalkan untuk mencakup tepat durasi yang dipilih.
+6. Untuk MP4, gambar digabungkan di atas warna latar belakang yang dipilih; untuk WebM, saluran alfa dipertahankan saat enkoder mengizinkannya.
 
-### Pipeline de audio
+### Pipeline audio
 
-1. Se prueba el archivo y se obtiene duración, sample rate y número de canales.
-2. El audio se decodifica y se mezcla a mono.
-3. Se calculan 1024 picos para dibujar la forma de onda.
-4. El fragmento se recorta con `start_ms` y `end_ms` enteros en milisegundos.
-5. El fragmento se remuestrea a **48 kHz mono**, que es la base usada por la exportación.
-6. La validación exige una selección entre **100 ms y el máximo elegido (5.000 o 10.000 ms; por defecto 10.000)**.
+1. File diperiksa untuk mendapatkan durasi, sample rate, dan jumlah saluran.
+2. Audio didekode dan dicampur menjadi mono.
+3. 1024 puncak dihitung untuk menggambar bentuk gelombang.
+4. Potongan dipangkas dengan `start_ms` dan `end_ms` dalam milidetik bulat.
+5. Potongan di-resample ke **48 kHz mono**, yang merupakan dasar yang digunakan oleh ekspor.
+6. Validasi mengharuskan pilihan antara **100 ms dan batas maksimal yang dipilih (5.000 atau 10.000 ms; default 10.000)**.
 
-### Codificación de video
+### Enkode video
 
-StikSound usa dos rutas locales, en este orden:
+StikSound menggunakan dua jalur lokal, dalam urutan ini:
 
-1. **WebCodecs + muxers TypeScript:** cuando la plataforma expone `VideoEncoder` y `AudioEncoder`, genera MP4 H.264/AAC o WebM VP9/Opus sin invocar servicios externos.
-2. **Canvas + MediaRecorder:** si WebCodecs no está disponible, dibuja el canvas, captura el stream y graba audio/video con los códecs que soporte esa plataforma.
+1. **WebCodecs + muxer TypeScript:** saat platform menyediakan `VideoEncoder` dan `AudioEncoder`, aplikasi menghasilkan MP4 H.264/AAC atau WebM VP9/Opus tanpa memanggil layanan eksternal.
+2. **Canvas + MediaRecorder:** jika WebCodecs tidak tersedia, aplikasi menggambar di canvas, menangkap stream, dan merekam audio/video dengan kodek yang didukung oleh platform tersebut.
 
-Si ninguna de las dos rutas existe, la exportación de video devuelve un error estructurado en lugar de fallar silenciosamente.
+Jika tidak ada satu pun dari kedua jalur tersebut yang tersedia, ekspor video mengembalikan error terstruktur alih-alih gagal secara diam-diam.
 
-### Proyectos `.stiksound.zip`
+### Proyek `.stiksound.zip`
 
-Un proyecto guardado contiene:
+Proyek yang disimpan berisi:
 
 ```text
 manifest.json
-assets/<archivo-de-imagen>
-assets/<archivo-de-audio>
+assets/<file-gambar>
+assets/<file-audio>
 ```
 
-El manifiesto guarda:
+Manifes menyimpan:
 
-- identificadores y nombres de assets;
-- formato, dimensiones y transparencia de la imagen;
-- duración, sample rate y origen del audio;
-- `start_ms`, `end_ms`, volumen y fades;
-- perfil de exportación activo.
+- pengidentifikasi dan nama aset;
+- format, dimensi, dan transparansi gambar;
+- durasi, sample rate, dan sumber audio;
+- `start_ms`, `end_ms`, volume, dan fade;
+- profil ekspor yang aktif.
 
-Al abrirlo se validan las rutas internas para impedir entradas maliciosas como `../` y se recalcula la forma de onda.
+Saat dibuka, jalur internal divalidasi untuk mencegah entri berbahaya seperti `../` dan bentuk gelombang dihitung ulang.
 
 ---
 
-## Arquitectura del repositorio
+## Arsitektur repositori
 
 ```text
 apps/
-  desktop/       App Tauri para Windows/macOS
-  extension/     Extensión Chrome Manifest V3
-  web/           App Web / PWA desplegada en GitHub Pages
+  desktop/       Aplikasi Tauri untuk Windows/macOS
+  extension/     Ekstensi Chrome Manifest V3
+  web/           Aplikasi Web / PWA yang di-deploy di GitHub Pages
 packages/
-  core/          Modelo de proyecto, invariantes, validación y casos de uso
-  ui/            Editor React, barra de recorte y textos i18n
-  media-web/     Sniffing, decodificación, trim, waveform, mux y ZIP en TypeScript
-  providers/     Extracción y política de URLs de MyInstants
+  core/          Model proyek, invarian, validasi, dan use case
+  ui/            Editor React, bilah pemotongan, dan teks i18n
+  media-web/     Sniffing, dekode, trim, waveform, mux, dan ZIP dalam TypeScript
+  providers/     Ekstraksi dan kebijakan URL MyInstants
 crates/
-  audio-engine/  Probe/decodificación/trim de audio en Rust
-  image-engine/  Probe y utilidades de imagen en Rust
-  video-engine/  Validación y mux de video en Rust
-  project-store/ Escritura atómica y paquetes en Rust
-docs/            Requisitos, arquitectura, especificaciones y decisiones
+  audio-engine/  Probe/dekode/trim audio dalam Rust
+  image-engine/  Probe dan utilitas gambar dalam Rust
+  video-engine/  Validasi dan mux video dalam Rust
+  project-store/ Penulisan atomik dan paket dalam Rust
+docs/            Persyaratan, arsitektur, spesifikasi, dan keputusan
 ```
 
-La idea principal es que la UI no contiene reglas de negocio: React llama a casos de uso de `packages/core`, y esos casos de uso delegan el trabajo de medios en un motor intercambiable (`WebMediaEngine` o componentes Rust en desktop).
+Ide utamanya adalah UI tidak berisi aturan bisnis: React memanggil use case dari `packages/core`, dan use case tersebut mendelegasikan pekerjaan media ke mesin yang dapat ditukar (`WebMediaEngine` atau komponen Rust di desktop).
 
 ---
 
-## Instalación
+## Instalasi
 
-### Windows y macOS
+### Windows dan macOS
 
-1. Abre [**Releases**](https://github.com/SilverFeit/StikSound/releases/latest).
-2. Descarga el instalador o ejecutable para tu plataforma:
-   - Windows: archivo `windows-x64`.
-   - macOS: archivo `macos-universal`.
-3. Abre StikSound. No necesitas instalar FFmpeg ni un editor de video aparte para el flujo principal.
+1. Buka [**Releases**](https://github.com/SilverFeit/StikSound/releases/latest).
+2. Unduh penginstal atau file eksekusi untuk platform Anda:
+   - Windows: file `windows-x64`.
+   - macOS: file `macos-universal`.
+3. Buka StikSound. Anda tidak perlu menginstal FFmpeg atau editor video terpisah untuk alur utama.
 
-En macOS, si aparece el aviso de desarrollador no verificado, haz clic derecho sobre la app y elige **Abrir**.
+Di macOS, jika muncul peringatan pengembang tidak terverifikasi, klik kanan pada aplikasi dan pilih **Buka**.
 
-### Extensión de Chrome, Edge o Brave
+### Ekstensi Chrome, Edge, atau Brave
 
-1. Descarga `StikSound-*-chrome-extension.zip` desde [**Releases**](https://github.com/SilverFeit/StikSound/releases/latest).
-2. Descomprímelo en una carpeta permanente.
-3. Abre `chrome://extensions/`.
-4. Activa **Modo de desarrollador**.
-5. Pulsa **Cargar descomprimida** y selecciona la carpeta descomprimida.
-6. Haz clic en el icono de StikSound: se abrirá el editor en una pestaña.
-
----
-
-## Privacidad y seguridad
-
-- No existe un servidor de StikSound que reciba tus imágenes o audios.
-- El procesamiento de medios se hace localmente en la app o en la pestaña de la extensión.
-- La única descarga de red integrada es MyInstants, y solo cuando pegas explícitamente un enlace.
-- MyInstants está restringido por política de URLs:
-  - solo HTTPS;
-  - solo `myinstants.com` y `www.myinstants.com`;
-  - sin usuario/contraseña embebidos;
-  - sin puertos distintos de 443;
-  - máximo 2 redirecciones;
-  - máximo 25 MB por audio;
-  - tiempo máximo de descarga de 20 segundos.
-- En desktop, la descarga se realiza desde el backend Rust para evitar limitaciones de CORS y aplica validaciones adicionales de direcciones IP privadas o reservadas.
-- Los paquetes ZIP se validan contra path traversal antes de abrirse.
-- Los sonidos descargados desde MyInstants pertenecen a sus respectivos autores.
+1. Unduh `StikSound-*-chrome-extension.zip` dari [**Releases**](https://github.com/SilverFeit/StikSound/releases/latest).
+2. Ekstrak ke folder permanen.
+3. Buka `chrome://extensions/`.
+4. Aktifkan **Mode pengembang**.
+5. Klik **Muat yang belum dibuka** (Load unpacked) dan pilih folder yang sudah diekstrak.
+6. Klik ikon StikSound: editor akan terbuka di tab baru.
 
 ---
 
-## Desarrollo
+## Privasi dan keamanan
 
-### Requisitos
+- Tidak ada server StikSound yang menerima gambar atau audio Anda.
+- Pemrosesan media dilakukan secara lokal di aplikasi atau di tab ekstensi.
+- Satu-satunya unduhan jaringan bawaan adalah MyInstants, dan hanya saat Anda menempelkan tautan secara eksplisit.
+- MyInstants dibatasi oleh kebijakan URL:
+  - hanya HTTPS;
+  - hanya `myinstants.com` dan `www.myinstants.com`;
+  - tanpa pengguna/kata sandi yang disematkan;
+  - tanpa port selain 443;
+  - maksimal 2 pengalihan (redirect);
+  - maksimal 25 MB per audio;
+  - waktu unduh maksimal 20 detik.
+- Di desktop, pengunduhan dilakukan dari backend Rust untuk menghindari batasan CORS dan menerapkan validasi tambahan untuk alamat IP pribadi atau tercadang.
+- Paket ZIP divalidasi terhadap path traversal sebelum dibuka.
+- Suara yang diunduh dari MyInstants tetap menjadi milik masing-masing pembuatnya.
 
-- Node.js 22 o superior.
-- npm 10 o superior.
+---
+
+## Pengembangan
+
+### Persyaratan
+
+- Node.js 22 atau lebih baru.
+- npm 10 atau lebih baru.
 - Rust stable.
-- Para compilar la app Tauri en Linux pueden hacer falta las dependencias nativas de WebKitGTK indicadas por la documentación de Tauri; en Windows y macOS se usan los WebViews del sistema.
+- Untuk mengompilasi aplikasi Tauri di Linux mungkin diperlukan dependensi bawaan WebKitGTK sesuai dokumentasi Tauri; di Windows dan macOS digunakan WebView sistem.
 
-### Instalar dependencias
+### Instal dependensi
 
 ```bash
 git clone https://github.com/SilverFeit/StikSound.git
@@ -341,7 +341,7 @@ cd StikSound
 npm install
 ```
 
-### Ejecutar validaciones
+### Jalankan validasi
 
 ```bash
 npm run typecheck
@@ -350,34 +350,34 @@ npm run build
 cargo test --workspace --exclude stiksound-desktop
 ```
 
-### Ejecutar la extensión en modo desarrollo
+### Jalankan ekstensi dalam mode pengembangan
 
 ```bash
 npm run build --workspace=@stiksound/extension
 ```
 
-Luego carga `apps/extension/dist` como extensión descomprimida desde `chrome://extensions/`.
+Kemudian muat `apps/extension/dist` sebagai ekstensi yang belum dibuka (unpacked) dari `chrome://extensions/`.
 
-Para reconstruir automáticamente al editar:
+Untuk membangun ulang secara otomatis saat mengedit:
 
 ```bash
 npm run dev --workspace=@stiksound/extension
 ```
 
-### Ejecutar el frontend desktop con Vite
+### Jalankan frontend desktop dengan Vite
 
 ```bash
 npm run dev --workspace=@stiksound/desktop
 ```
 
-### Ejecutar la app Tauri completa
+### Jalankan aplikasi Tauri lengkap
 
 ```bash
 cd apps/desktop
 npx tauri dev
 ```
 
-### Compilar la app desktop
+### Kompilasi aplikasi desktop
 
 ```bash
 cd apps/desktop
@@ -386,33 +386,33 @@ npx tauri build
 
 ---
 
-## Solución de problemas
+## Pemecahan masalah
 
-| Problema | Causa probable | Qué hacer |
+| Masalah | Kemungkinan penyebab | Yang harus dilakukan |
 | --- | --- | --- |
-| “Enlace rechazado por seguridad” | La URL no es HTTPS de MyInstants o tiene formato no permitido | Copia el enlace público del instante o el archivo directo desde `myinstants.com`. |
-| “No se pudo leer este audio” | El archivo está corrupto o el códec no existe en esa plataforma | Prueba con MP3 o WAV, o exporta nuevamente el audio desde otra app. |
-| El video transparente sale con fondo | Elegiste MP4 o la plataforma no soporta alfa VP9 | Usa la salida WebM transparente. |
-| El botón copiar no pega en WhatsApp | El navegador/sistema bloquea videos en el portapapeles | Descarga el archivo con `⬇` y compártelo manualmente. |
-| El audio suena recortado | El fragmento seleccionado está limitado al máximo elegido (5 o 10 segundos) | Cambia el botón `5s \| 10s`, mueve la ventana de recorte o usa un audio más corto. |
-| El WebP falla por tamaño | WhatsApp exige stickers estáticos pequeños | Usa una imagen más simple o exporta como video. |
+| “URL ditolak oleh kebijakan keamanan” | URL bukan HTTPS dari MyInstants atau formatnya tidak diizinkan | Salin tautan publik instan atau file langsung dari `myinstants.com`. |
+| “Tidak dapat mendekode audio ini” | File rusak atau kodek tidak ada di platform tersebut | Coba MP3 atau WAV, atau ekspor ulang audio dari aplikasi lain. |
+| Video transparan memiliki latar belakang | Anda memilih MP4 atau platform tidak mendukung alfa VP9 | Gunakan output WebM transparan. |
+| Tombol salin tidak menempel di WhatsApp | Browser/sistem memblokir video di papan klip | Unduh file dengan `⬇` dan bagikan secara manual. |
+| Audio terdengar terpotong | Potongan yang dipilih dibatasi pada maksimal yang dipilih (5 atau 10 detik) | Ubah tombol `5s \| 10s`, geser jendela pemotongan, atau gunakan audio yang lebih pendek. |
+| WebP gagal karena ukuran | WhatsApp mewajibkan stiker statis berukuran kecil | Gunakan gambar yang lebih sederhana atau ekspor sebagai video. |
 
 ---
 
-## Documentación adicional
+## Dokumentasi tambahan
 
-- Índice técnico: [docs/README.md](docs/README.md)
-- Arquitectura: [docs/architecture/overview.md](docs/architecture/overview.md)
-- Requisitos funcionales: [docs/requirements/functional-requirements.md](docs/requirements/functional-requirements.md)
-- Exportación: [docs/specifications/export.md](docs/specifications/export.md)
-- Seguridad: [docs/specifications/security.md](docs/specifications/security.md)
-- Plan de pruebas: [docs/qa/test-plan.md](docs/qa/test-plan.md)
+- Indeks teknis: [docs/README.md](docs/README.md)
+- Arsitektur: [docs/architecture/overview.md](docs/architecture/overview.md)
+- Persyaratan fungsional: [docs/requirements/functional-requirements.md](docs/requirements/functional-requirements.md)
+- Ekspor: [docs/specifications/export.md](docs/specifications/export.md)
+- Keamanan: [docs/specifications/security.md](docs/specifications/security.md)
+- Rencana pengujian: [docs/qa/test-plan.md](docs/qa/test-plan.md)
 
-## License
+## Lisensi
 
-Dual-licensed under either of:
+Berlisensi ganda di bawah salah satu dari:
 
 - Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE))
 - MIT License ([LICENSE-MIT](LICENSE-MIT))
 
-at your option (`MIT OR Apache-2.0`).
+sesuai pilihan Anda (`MIT OR Apache-2.0`).
