@@ -40,7 +40,7 @@ export function assertSafeZipEntryPath(entryPath: string): void {
   if (segments.some((s) => s === "" || s === "." || s === "..")) {
     throw new StikSoundError("package-invalid", `Path traversal in zip entry: ${entryPath}`);
   }
-  if (entryPath === "manifest.json") return;
+  if (entryPath === "manifest.json" || entryPath === "sticker.webp" || entryPath === "sound.ogg") return;
   if (segments.length === 2 && segments[0] === "assets" && ASSET_PATH_PATTERN.test(entryPath)) return;
   throw new StikSoundError("package-invalid", `Disallowed zip entry path: ${entryPath}`);
 }
