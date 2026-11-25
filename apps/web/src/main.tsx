@@ -129,10 +129,31 @@ const webLabels: Record<LocaleCode, Partial<UiLabels>> = {
           hoverCropHint: "Drag to frame"
         }
       : { stickerDropHint: "Drop or click: PNG, GIF, WebP, JPG or a short video (MP4, MOV)" })
+  },
+  id: {
+    exportTooltip: "Buat video dan bagikan",
+    exportDisabledMissingAudio: "Tambahkan suara (MP3, M4A, WAV)",
+    audioPickBtn: "🎵 Pilih suara (MP3, M4A, WAV)",
+    copyAgainBtn: "Bagikan",
+    downloadTooltip: "Simpan",
+    downloadBtnLabel: "Simpan",
+    downloadChooseFormat: "Pilih yang ingin disimpan:",
+    downloadFmtMp4: "Video MP4 (5d / 10d)",
+    exportSuccessVideo: "Selesai. Jika Anda tidak memilih lokasi, cari di File → Unduhan.",
+    aboutRights:
+      "Versi web. Semuanya berjalan di ponsel Anda; tidak ada yang diunggah. Untuk menggunakan suara MyInstants, unduh di Safari terlebih dahulu, lalu pilih dengan tombol suara. Video berdurasi maksimal 5 atau 10 detik, dipilih melalui tombol di bilah (10 secara default).",
+    ...(isTouch
+      ? {
+          stickerDropTitle: "Ketuk untuk memilih stiker Anda",
+          stickerDropHint: "Foto, GIF, atau video pendek dari Foto atau File",
+          hoverCropHint: "Seret untuk membingkai"
+        }
+      : { stickerDropHint: "Jatuhkan atau klik: PNG, GIF, WebP, JPG, atau video pendek (MP4, MOV)" })
   }
 };
 
-const locale: LocaleCode = navigator.language.toLowerCase().startsWith("es") ? "es" : "en";
+const navLang = navigator.language.toLowerCase();
+const locale: LocaleCode = navLang.startsWith("es") ? "es" : navLang.startsWith("id") ? "id" : "en";
 
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

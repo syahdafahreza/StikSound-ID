@@ -18,6 +18,7 @@ import {
 } from "@stiksound/core";
 import enLocale from "../locales/en.json";
 import esLocale from "../locales/es.json";
+import idLocale from "../locales/id.json";
 import { TimelineTrimBar } from "./TimelineTrimBar";
 
 export type ShareOutcome = "shared" | "cancelled" | "needs-tap";
@@ -58,7 +59,7 @@ export interface StikSoundMinimalAppProps {
   labelOverrides?: Partial<Record<LocaleCode, Partial<UiLabels>>>;
 }
 
-const LOCALES: Record<LocaleCode, UiLabels> = { es: esLocale, en: enLocale };
+const LOCALES: Record<LocaleCode, UiLabels> = { es: esLocale, en: enLocale, id: idLocale };
 
 function audioMimeType(format: string): string {
   switch (format) {
@@ -678,7 +679,7 @@ export const StikSoundMinimalApp: React.FC<StikSoundMinimalAppProps> = ({
             >
               {copy.menuSaveProject}
             </button>
-            <button type="button" onClick={() => setLocale((l) => (l === "es" ? "en" : "es"))}>
+            <button type="button" onClick={() => setLocale((l) => (l === "es" ? "en" : l === "en" ? "id" : "es"))}>
               {copy.menuLanguage}: {locale.toUpperCase()}
             </button>
             <button
